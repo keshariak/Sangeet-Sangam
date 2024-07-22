@@ -1,0 +1,594 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    
+    rel="stylesheet"
+/>
+</head>
+<style>
+  *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+overflow: hidden;
+}
+html,body
+{
+height: 100%;
+width: 100%;
+
+}
+.top::-webkit-scrollbar{
+      display: none;
+    }
+.musiclist::-webkit-scrollbar{
+      display: none;
+    }
+  .main{
+    overflow: hidden;
+    background: rgb(255,241,230);
+background: linear-gradient(180deg, rgba(255,241,230,1) 6%, rgba(210,194,241,1) 100%);
+  }
+  .mainimg{
+    position: absolute;
+    left: 65%;
+    top: -20%;
+    z-index: 4;
+    animation-name: img;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    /* animation-direction: normal; */
+    animation-timing-function: linear;
+    
+  }
+
+  .music h4{
+    overflow: hidden;
+  }
+  .music{
+    transition: all ease 0.3s;
+    
+  }
+  .playdiv{
+    transition: all ease 1s;
+    /* background-image: url(https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
+    background-position: center;
+    background-size: cover;
+    
+  }
+  .music:hover{
+    scale: 1.03;
+    transition: all ease 0.3s;
+    border-radius: 20px;
+
+  }
+  .playdiv:hover{
+    scale: 1.03;
+    transition: all ease 1s;
+    border-radius: 20px;
+
+  }
+  .music h4{
+    max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  }
+  .box h2, h6{
+    max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+
+  }
+ 
+    
+
+.songdiv h3,h6{
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+      
+    }
+</style>
+<style>
+  h3{
+    /* text-shadow:1px 1px 1px #fff; */
+}
+/* Start  styling the page */
+.audiozone{
+  display: flex;
+  flex-direction: column;
+
+}
+.container-audio1 {
+    width: 30%;
+    height: auto;
+    
+    border-radius: 5px;
+    background-color: black;
+    color: #444;
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.container-audio {
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 5px;
+    background-color: #AB6152;
+    color: #444;
+    margin: 0px auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+audio {
+  width:50%;
+}
+audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
+    margin: 0;
+}
+.container-audio .colum1 {
+    width: 23px;
+    height: 5em;
+    border-radius: 5px;
+    margin: 0 10px 0 0;
+    display: inline-block;
+    position: relative;
+}
+.container-audio .colum1:last-child {
+    margin: 0;
+}
+.container-audio .colum1 .row {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to up, #7700aa, #8800ff);
+    position: absolute;
+    -webkit-animation: Rofa 10s infinite ease-in-out;
+    animation: Rofa 10s infinite ease-in-out;
+    bottom: 0;
+}
+.container-audio .colum1:nth-of-type(1) .row {
+    -webkit-animation-delay: 3.99s;
+    animation-delay: 3.99s;
+}
+.container-audio .colum1:nth-of-type(2) .row {
+    -webkit-animation-delay: 3.80s;
+    animation-delay: 3.80s;
+}
+.container-audio .colum1:nth-of-type(3) .row {
+    -webkit-animation-delay: 3.70s;
+    animation-delay: 3.70s;
+}
+.container-audio .colum1:nth-of-type(4) .row {
+    -webkit-animation-delay: 3.60s;
+    animation-delay: 3.60s;
+}
+.container-audio .colum1:nth-of-type(5) .row {
+    -webkit-animation-delay: 3.50s;
+    animation-delay: 3.50s;
+}
+.container-audio .colum1:nth-of-type(6) .row {
+    -webkit-animation-delay: 3.40s;
+    animation-delay: 3.40s;
+}
+.container-audio .colum1:nth-of-type(7) .row {
+    -webkit-animation-delay: 3.30s;
+    animation-delay: 3.30s;
+}
+.container-audio .colum1:nth-of-type(8) .row {
+    -webkit-animation-delay: 3.20s;
+    animation-delay: 3.20s;
+}
+.container-audio .colum1:nth-of-type(9) .row {
+    -webkit-animation-delay: 3.10s;
+    animation-delay: 3.10s;
+}
+.container-audio .colum1:nth-of-type(10) .row {
+    -webkit-animation-delay: 2.1s;
+    animation-delay: 2.1s;
+}
+.container-audio .colum1:nth-of-type(11) .row {
+    -webkit-animation-delay: 2.1s;
+    animation-delay: 2.1s;
+}
+.container-audio .colum1:nth-of-type(12) .row {
+    -webkit-animation-delay: 2.10s;
+    animation-delay: 2.10s;
+}
+.container-audio .colum1:nth-of-type(13) .row {
+    -webkit-animation-delay: 2.20s;
+    animation-delay: 2.20s;
+}
+.container-audio .colum1:nth-of-type(14) .row {
+    -webkit-animation-delay: 1.30s;
+    animation-delay: 1.30s;
+}
+.container-audio .colum1:nth-of-type(15) .row {
+    -webkit-animation-delay: 1.40s;
+    animation-delay: 1.40s;
+}
+.container-audio .colum1:nth-of-type(16) .row {
+    -webkit-animation-delay: 1.50s;
+    animation-delay: 1.50s;
+}
+.container-audio .colum1:nth-of-type(17) .row {
+    -webkit-animation-delay: 1.60s;
+    animation-delay: 1.60s;
+}
+.container-audio .colum1:nth-of-type(18) .row {
+    -webkit-animation-delay: 1.70s;
+    animation-delay: 1.70s;
+}
+.container-audio .colum1:nth-of-type(19) .row {
+    -webkit-animation-delay: 1.80s;
+    animation-delay: 1.80s;
+}
+.container-audio .colum1:nth-of-type(20) .row {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+@-webkit-keyframes Rofa {
+    0% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+        background-color: yellow;
+    }
+
+    5% {
+        height: 100%;
+        -webkit-transform: translatey(15px);
+        transform: translatey(15px);
+        background-color: fuchsia;
+    }
+    10% {
+        height: 90%;
+        transform: translatey(0);
+        -webkit-transform: translatey(0);
+        background-color: bisque;
+    }
+
+    15% {
+        height: 80%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    20% {
+        height: 70%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+        background-color: cornflowerblue;
+    }
+    25% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+        background-color: cornflowerblue;
+    }
+    30% {
+        height: 70%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+        background-color: cornflowerblue;
+    }
+    35% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    40% {
+        height: 60%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    45% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    50% {
+        height: 50%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    55% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    60% {
+        height: 40%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    65% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    70% {
+        height: 30%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    75% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    80% {
+        height: 20%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    85% {
+        height: 0%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    90% {
+        height: 10%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    95% {
+        height: 5%;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+    100% {
+        height: 0;
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+
+        background-color: cornflowerblue;
+    }
+}
+
+</style>
+<body>
+  <!-- <div class="mainimg w-[800px] h-[800px] absolute rounded-full overflow-hidden"><img class="mainimg1 w-full h-full object-cover" src="https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></div> -->
+
+  <div class="main w-full h-screen overflow-hidden  ">
+    <!-- upper div -->
+    <div class="up z-10 w-full h-full  flex overflow-hidden "  >
+
+      <!--  UpperLeft -->
+      <div class="upperleft w-3/12 h-full bg-white  ">
+
+        <div class="search px-6 pt-3 mb-0 h-[10%]  ">
+            <div class="mt-0 mb-0 mx-auto w-full py-1 px-6 rounded-full bg-slate-300  border-none flex ">
+              <input type="text" placeholder="Search anything" value="" class="bg-transparent w-full focus:outline-none pr-4 font-semibold text-gray-700  focus:ring-0 px-0 py-0 " name="topic">
+              <button onclick="searchSong()"  class="flex flex-row items-center justify-center min-w-[40px] px-0 rounded-full font-medium tracking-wide border disabled:cursor-not-allowed disabled:opacity-50 transition ease-in-out duration-150 text-base bg-gray-600 text-white font-medium tracking-wide border-transparent py-1.5 h-[38px] -mr-3" >
+                <i class="ri-search-line"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="searchsongs p-3 w-full  h-[90%]  pt-3">
+
+           
+            
+           
+            
+          </div>
+
+       
+
+
+      </div>
+      
+
+       <!--  UpperRight -->
+      <div class="upperright w-9/12 h-full  ml-2 rounded-md overflow-auto  p-1">
+        <div class="w-full h-[10%] p-2  ">
+          <div class="w-full h-12 flex  justify-between space-x-20 items-center p-3">
+            <div class="flex">
+                <button class="btn h-fit bg-slate-100 rounded-full font-semibold text-sm mx-2 p-1 px-3 ">All</button>
+                <button class="btn h-fit text-white bg-zinc-800 rounded-full font-semibold text-sm mx-2 p-1 px-3 ">Music</button>
+            </div>
+            <div class="flex">
+                <form action="/uploadMusic" method="post" enctype="multipart/form-data">
+                    <input type="file" name="song" multiple>
+                    <input type="submit">
+                   </form>
+                    <!-- <button class="btn h-fit bg-slate-100 rounded-full font-semibold text-sm  p-1 px-3 ">Add Music</button> -->
+        
+        
+                    <button class="btn h-fit bg-blue-400 rounded-full font-bold text-base text-white   p-1  px-3 ml-5 ">Aryan</button>
+
+            </div>
+        
+
+          
+          </div>
+          <div class="w-full h-9 flex " >
+           
+          </div>
+          
+        </div>
+
+
+
+        <div class=" w-full h-[90%] p-0 ">
+            <div class="top w-full h-2/6 flex gap-2 overflow-x-scroll no-scrollbar">
+
+                <% currentUser.playlist[0].songs.forEach(song=>{ %>
+                    <!-- <div onclick="songCardClicked('<%=song.fileName%>','<%=song.title%>','<%=song.artist%>','<%=song.album%>','<%=song.poster%>')" class="music  bg-white w-11/12 h-16 rounded-2xl  flex items-center pl-[20px]">
+                        <div class="number ml-3"><i class="ri-circle-line text-slate-600"></i></div>
+                        <div class="img w-12 h-12 bg-cyan-800 rounded-2xl ml-4"><img src="/poster/<%= song.poster %>" alt=""></div>
+                        
+                        <h4 class="font-semibold ml-4 w-1/5"><%= song.title %></h4>
+                        <h4 class=" ml-4 text-gray-400 w-2/5"><%= song.artist %></h4>
+                        <i class="ri-music-fill ml-4"></i>
+                    </div> -->
+
+ 
+
+                    <div onclick="songCardClicked('<%=song.fileName%>','<%=song.title%>','<%=song.artist%>','<%=song.album%>','<%=song.poster%>')"  class="box  min-w-[10vw] h-[14vw] items-center pt-3 p-2 ">
+                        <div class="img h-[9vw] w-[9vw] rounded-xl bg-slate-600 overflow-hidden object-cover"><img class="w-full h-full object-cover" src="/poster/<%= song.poster %>" alt=""></div>
+                        <h2 class="font-bold"><%= song.title %></h2>
+                        <h6><%= song.artist %></h6>
+                    </div>
+                   <% })%>
+
+                
+               
+                
+                
+                
+
+            </div>
+            
+
+
+
+            <div class="down w-full h-4/6 flex p-2 pb-0.5 ">
+
+
+                <div class="left w-5/12 h-full  p-5 pb-0 pt-0">
+                    <div class="nowplay w-full h-[10%]">
+                    <h2 class="w-full font-bold text-lg text-gray-800 ">Now Playing</h2>
+                    </div>
+                     <div class="playdiv w-full h-[85%] bg-white flex flex-col items-center rounded-3xl pt-3">
+                        
+                        <div class="mainsongimg w-[10rem] h-[10rem] bg-white  rounded-3xl  items-center mt-[6%]   shadow-xl">
+                            <img  class="playingsongimg w-full h-full object-cover" src="" alt="">
+                        </div>
+                        <div class="mainsongdetail  w-full flex flex-col items-center">
+                        <h1 class="font-bold text-xl mt-2" >Lutt Putt Gaya</h1>
+                        <h6 class="font-semibold text-gray-400">Anuv Jain</h6>
+                    
+                        </div>
+                        <audio class="w-4/6 px-5 mt-7 " src="" controls>erte</audio>
+
+                     </div>
+                </div>
+                <div class="right w-7/12 h-full  p-5 pb-0 pt-0 ">
+                    <div class="nowplay w-full h-[10%]">
+                        <h2 class="w-full font-bold text-lg pl-12 text-gray-800 ">All Songs</h2>
+                        </div>
+                         <div class=" musiclist w-full h-[85%] flex flex-col p-5 items-center rounded-3xl gap-4 overflow-y-scroll ">
+
+                            <% currentUser.playlist[0].songs.forEach(song=>{ %>
+                            <div onclick="songCardClicked('<%=song.fileName%>','<%=song.title%>','<%=song.artist%>','<%=song.album%>','<%=song.poster%>')" class="music  bg-white w-11/12 min-h-16 rounded-2xl  flex items-center pl-[20px]">
+                                <div class="number ml-3"><i class="ri-circle-line text-slate-600"></i></div>
+                                <div class="img w-12 h-12 bg-cyan-800 rounded-2xl ml-4"><img src="/poster/<%= song.poster %>" alt=""></div>
+                                
+                                <!-- <i class="ri-triangle-fill rotate-90 text-sm ml-2 text-gray-400"></i> -->
+                                <h4 class="font-semibold ml-4 w-1/5"><%= song.title %></h4>
+                                <h4 class=" ml-4 text-gray-400 w-2/5"><%= song.artist %></h4>
+                                <i class="ri-music-fill ml-4"></i>
+                            </div>
+                           <% })%>
+                           
+                         </div>
+                </div>
+            </div>
+          
+       </div>
+    </div>
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+   
+    function songCardClicked(filename, title,artist,album,poster){
+     document.querySelector('audio').setAttribute('src', `/stream/${filename}`)
+     document.querySelector('audio').play()
+    
+     
+     var songtitle= title
+     var songartist=artist
+     var songalbum = album
+     var somgposter= poster
+     
+     document.querySelector('.mainsongdetail>h1').innerHTML= songtitle
+     document.querySelector('.mainsongdetail>h6').innerHTML= songartist
+ 
+
+     var img= document.querySelector('.playingsongimg')
+     console.log(img.src)
+     img.src = `/poster/${poster}`;
+ 
+
+     
+    }
+
+
+
+
+
+
+
+
+    async function searchSong(e){
+        // e.preventDefault()
+        const result= await axios.post('/',{
+        search:document.querySelector('input').value,
+       
+    
+    })
+
+    console.log(result)
+     let clutter= ""
+     result.data.songs.forEach(song=> {
+        console.log(song.title)
+        clutter+= ` <div onclick="songCardClicked('${song.fileName}','${song.title}','${song.artist}','${song.album}','${song.poster}')" class="searchmusic  bg-slate-200 w-full min-h-16 rounded-2xl mb-2  flex items-center ">
+                <div class="img w-12 h-12 bg-cyan-800 rounded-2xl ml-2"><img src="/poster/${song.poster}" alt=""></div>
+                <h4 class="font-semibold ml-4 w-3/5">${song.title}</h4>
+             
+                <i class="ri-music-fill ml-4"></i>
+            </div>  `
+      
+     });
+     document.querySelector(".searchsongs").innerHTML= clutter
+     
+    }
+  </script>
+</body>
+</html>

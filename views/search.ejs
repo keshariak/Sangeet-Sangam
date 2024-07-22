@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="" placeholder="search any music...">   
+<button onclick="searchSong()">search</button> 
+<div class="songsarea">
+   
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    async function searchSong(){
+        const result= await axios.post('/search',{
+        search:document.querySelector('input').value
+    })
+
+    console.log(result)
+     let clutter= ""
+     result.data.songs.forEach(song=> {
+        console.log(song.title)
+        clutter+= `
+    <div onclick="songCardClicked('${song.fileName}','${song.title}','${song.artist}','${song.album}','${song.poster}')" class="music  bg-white w-11/12 min-h-16 rounded-2xl  flex items-center pl-[20px]">
+                                <div class="number ml-3"><i class="ri-circle-line text-slate-600"></i></div>
+                                <div class="img w-12 h-12 bg-cyan-800 rounded-2xl ml-4"><img src="/poster/${song.poster}" alt=""></div>
+                                
+                                <!-- <i class="ri-triangle-fill rotate-90 text-sm ml-2 text-gray-400"></i> -->
+                                <h4 class="font-semibold ml-4 w-1/5">${song.title}</h4>
+                                <h4 class=" ml-4 text-gray-400 w-2/5">${song.artist}</h4>
+                                <i class="ri-music-fill ml-4"></i>
+                            </div>`
+      
+     });
+     document.querySelector(".songsarea").innerHTML= clutter
+     
+    }
+   
+
+</script>
+</body>
+</html>
